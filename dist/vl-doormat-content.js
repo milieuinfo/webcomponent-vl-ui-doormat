@@ -24,15 +24,15 @@ export class VlDoormatContent extends nativeVlElement(HTMLDivElement) {
 
   _processStyle() {
     this._addClass();
-    this._appendIcon();
+    this._prependIcon();
   }
 
   _addClass() {
     this.classList.add('vl-doormat__content');
   }
 
-  _appendIcon() {
-    this.appendChild(this._iconTemplate);
+  _prependIcon() {
+    this.prepend(this._iconTemplate);
   }
 }
 
