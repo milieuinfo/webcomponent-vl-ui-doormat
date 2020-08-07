@@ -20,8 +20,7 @@ export class VlDoormat extends nativeVlElement(HTMLAnchorElement) {
     return ['alt', 'graphic'];
   }
 
-  constructor() {
-    super();
+  connectedCallback() {
     this._processStyle();
   }
 
