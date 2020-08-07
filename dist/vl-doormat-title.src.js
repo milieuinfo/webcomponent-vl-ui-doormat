@@ -13,8 +13,7 @@ import {nativeVlElement, define} from 'vl-ui-core';
  *
  */
 export class VlDoormatTitle extends nativeVlElement(HTMLHeadingElement) {
-  constructor() {
-    super();
+  connectedCallback() {
     this._processStyle();
   }
 

@@ -13,8 +13,7 @@ import {nativeVlElement, define} from 'vl-ui-core';
  *
  */
 export class VlDoormatGraphicWrapper extends nativeVlElement(HTMLDivElement) {
-  constructor() {
-    super();
+  connectedCallback() {
     this._processStyle();
   }
 
