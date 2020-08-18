@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="../../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../../web-component-tester/browser.js"></script>
+
+  <script type="module" src="../../src/vl-doormat-all.js"></script>
+</head>
+
+<body>
+  <test-fixture id="vl-doormat-content-fixture">
+    <template>
+      <div is="vl-doormat-content"></div>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('vl-doormat-content', () => {
+      const should = chai.should();
+
+      test('heeft de vl-doormat-content class', () => {
+        const element = fixture('vl-doormat-content-fixture');
+        assert.isTrue(element.classList.contains('vl-doormat__content'));
+      });
+
+      test('bevat een arrow icoon', () => {
+        const element = fixture('vl-doormat-content-fixture');
+        const icon = element.querySelector('.vl-doormat__content__arrow');
+        should.exist('icon');
+        assert.isTrue(icon.hasAttribute('aria-hidden'));
+      });
+    });
+  </script>
+</body>
+
+</html>

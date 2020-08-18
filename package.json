@@ -1,0 +1,53 @@
+{
+	"name": "vl-ui-doormat",
+	"version": "0.0.0",
+	"description": "Gebruik de doormat component om een snel en duidelijk overzicht van de informatie op de website toe te voegen, onderverdeeld in categorieën. Elke doormat categorie krijgt een titel, een afbeelding (optioneel) en een korte intro. Elke categorie linkt naar de onderliggende pagina.",
+	"author": "DIDM",
+	"license": "MIT",
+	"main": "./src/index.js",
+	"exports": {
+		"require": "./index.js",
+		"import": "./src/index.js",
+		"node": "./index.js",
+		"default": "./index.js"
+	},
+	"homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-doormat#readme",
+	"bugs": {
+		"url": "https://github.com/milieuinfo/webcomponent-vl-ui-doormat/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-doormat.git"
+	},
+	"publishConfig": {
+		"registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
+	},
+	"scripts": {
+		"prepare": "npm update --dev vl-ui-util && npm run prepare:util",
+		"prepare:util": "npm explore vl-ui-util -- npm run util",
+		"test": "npm explore vl-ui-util -- npm run test:component",
+		"test:grid": "npm explore vl-ui-util -- npm run test:component:grid",
+		"test:unit": "npm explore vl-ui-util -- npm run test:component:unit",
+		"test:unit:grid": "npm explore vl-ui-util -- npm run test:component:unit:grid",
+		"test:e2e": "npm explore vl-ui-util -- npm run test:component:e2e",
+		"test:e2e:grid": "npm explore vl-ui-util -- npm run test:component:e2e:grid",
+		"release": "npm explore vl-ui-util -- npm run release",
+		"release:prepare": "npm explore vl-ui-util -- npm run release-component:prepare $(pwd) doormat",
+		"release:testless": "npm explore vl-ui-util -- npm run release:testless",
+		"demo": "http-server"
+	},
+	"dependencies": {
+		"vl-ui-core": "^6.0.0"
+	},
+	"peerDependencies": {
+		"vl-ui-core": "^6.0.0"
+	},
+	"devDependencies": {
+		"@govflanders/vl-ui-doormat": "3.11.5",
+		"@govflanders/vl-ui-icon-list": "^3.11.5",
+		"@govflanders/vl-ui-titles": "^3.11.5",
+		"@govflanders/vl-ui-util": "^3.11.5",
+		"vl-ui-body": "^1.0.4",
+		"vl-ui-util": "^5.2.13"
+	}
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="../../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../../web-component-tester/browser.js"></script>
+
+  <script type="module" src="../../src/vl-doormat-all.js"></script>
+</head>
+
+<body>
+  <test-fixture id="vl-doormat-image-fixture">
+    <template>
+      <a is="vl-doormat" href="#">
+        <img is="vl-doormat-image"></img>
+      </a>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('vl-doormat-image', () => {
+      const should = chai.should();
+    
+      test('heeft de vl-doormat-image class', () => {
+        const element = fixture('vl-doormat-image-fixture');
+        const image = element.imageElement;
+        assert.isTrue(image.classList.contains('vl-doormat__image'));
+      });
+
+      test('zal een graphic wrapper element toevoegen wanneer het graphic attribuut aanwezig is', () => {
+        const element = fixture('vl-doormat-image-fixture');
+        const image = element.imageElement;
+        should.not.exist(element.wrapperElement);
+        image.setAttribute('data-vl-graphic', '');
+        should.exist(image.wrapperElement);
+        assert.isTrue(image.wrapperElement.contains(image));
+        assert.isFalse(image.hasAttribute('data-vl-image'));
+
+        image.removeAttribute('data-vl-graphic');
+        should.not.exist(image.wrapperElement);
+        assert.isTrue(image.doormatElement.contains(image));
+      });
+
+      test('zal een graphic attribuut toevoegen aan het doormat element wanneer het graphic attribuut aanwezig is', () => {
+        const element = fixture('vl-doormat-image-fixture');
+        const image = element.imageElement;
+        assert.isFalse(element.hasAttribute('data-vl-graphic'));
+        image.setAttribute('data-vl-graphic', '');
+        assert.isTrue(element.hasAttribute('data-vl-graphic'));
+        image.removeAttribute('data-vl-graphic');
+        assert.isFalse(element.hasAttribute('data-vl-graphic'));
+      });
+    });
+  </script>
+</body>
+
+</html>
