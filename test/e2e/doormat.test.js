@@ -1,10 +1,11 @@
-const {assert, driver} = require('vl-ui-core').Test.Setup;
+const {assert, getDriver} = require('vl-ui-core').Test.Setup;
 const VlDoormatPage = require('./pages/vl-doormat.page');
 
 describe('vl-doormat', async () => {
-  const vlDoormatPage = new VlDoormatPage(driver);
+  let vlDoormatPage;
 
   before(() => {
+    vlDoormatPage = new VlDoormatPage(getDriver());
     return vlDoormatPage.load();
   });
 
