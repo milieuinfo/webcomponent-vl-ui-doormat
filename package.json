@@ -1,6 +1,6 @@
 {
 	"name": "vl-ui-doormat",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Gebruik de doormat component om een snel en duidelijk overzicht van de informatie op de website toe te voegen, onderverdeeld in categorieën. Elke doormat categorie krijgt een titel, een afbeelding (optioneel) en een korte intro. Elke categorie linkt naar de onderliggende pagina.",
 	"author": "DIDM",
 	"license": "MIT",
