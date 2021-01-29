@@ -1,1 +1,1 @@
-export * from '../dist/vl-doormat.src.js';
+export * from '../dist/vl-doormat-all.src.js';
