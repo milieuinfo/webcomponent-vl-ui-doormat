@@ -1,3 +1,1 @@
-module.exports = {
-  VlDoormat: require('../dist/vl-doormat.src.js').VlDoormat,
-};
+export * from '../dist/vl-doormat-all.src.js';
