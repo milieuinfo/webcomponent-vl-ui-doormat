@@ -1,5 +1,5 @@
 import {nativeVlElement, define} from 'vl-ui-core';
-import 'vl-ui-doormat/dist/vl-doormat-content.src.js';
+import '../dist/vl-doormat-content.src.js';
 
 /**
  * VlDoormat
