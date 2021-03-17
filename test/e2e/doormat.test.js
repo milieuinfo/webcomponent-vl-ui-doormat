@@ -9,6 +9,10 @@ describe('vl-doormat', async () => {
     return vlDoormatPage.load();
   });
 
+  it('WCAG', async () => {
+    await assert.eventually.isFalse(vlDoormatPage.hasWcagIssues());
+  });
+
   it('als gebruiker kan ik de titel van een doormat bekijken', async () => {
     const doormat = await vlDoormatPage.getDoormat();
     await assert.eventually.equal(doormat.getTitle(), 'Bouwen, wonen en energie');
